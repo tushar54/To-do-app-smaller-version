@@ -3,6 +3,7 @@ import Home from "../AllRoute/Home";
 import Login from "../Component/Login";
 import Dashboard from "../Dashboard/Dashboard";
 import Today from "../Dashboard/AllPath/Today";
+import Empty from "../Component/Empty";
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
                 {
                     path:'today',
                     element:<Today></Today>
+                },
+                {
+                  path:'empty',
+                  element:<Empty></Empty>
                 }
             ]
         }

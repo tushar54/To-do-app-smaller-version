@@ -2,12 +2,14 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../Storage/Authslice";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
 
   const handleLogin = () => {
     if (username && password) {
@@ -27,9 +29,11 @@ const Login = () => {
   };
 
   return (
-    <div className="p-4">
-      <div>
-        <h2>Login</h2>
+   <div className="container mx-auto"> 
+    <Navbar></Navbar>
+     <div className="p-4 flex justify-center items-center">
+      <div className="flex flex-col justify-center items-center gap-6">
+        <h2 className="text-2xl font-bold ">Login</h2>
         <input
           type="text"
           value={username}
@@ -52,6 +56,7 @@ const Login = () => {
         </button>
       </div>
     </div>
+   </div>
   );
 };
 
